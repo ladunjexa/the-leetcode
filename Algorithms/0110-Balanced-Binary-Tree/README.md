@@ -1,4 +1,4 @@
-## [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/description/)
+## [110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/)
 ### Easy
 <hr/>
 
