@@ -1,7 +1,7 @@
 ## [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/description/)
 ### Easy
 <hr/>
-Given an integer <code>numRows</code>, return the first numRows of **Pascal's triangle**.
+Given an integer <code>numRows</code>, return the first numRows of <strong>Pascal's triangle</strong>.
 
 In **Pascal's triangle**, each number is the sum of the two numbers directly above it as shown:
 
