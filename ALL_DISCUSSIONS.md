@@ -44,6 +44,8 @@ only, and it is **not** meant to be used for production.*
 * [977. Squares of a Sorted Array](#squares-of-a-sorted-array)
 * [1323. Maximum 69 Number](#maximum-69-number)
 * [1572. Matrix Diagonal Sum](#matrix-diagonal-sum)
+* [1337. The K Weakest Rows in a Matrix](#the-k-weakest-rows-in-a-matrix)
+* [1608. Special-Array-With-X-Elements-Greater-Than-or-Equal-X](#special-array-with-x-elements-greater-than-or-equal-x)
 * [2660. Determine the Winner of a Bowling Game](#determine-the-winner-of-a-bowling-game)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -1440,6 +1442,138 @@ class Solution {
         }
         // Return the sum of the diagonals.
         return diagonalSum;
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# The K Weakest Rows in a Matrix
+## Intuition & Approach
+The `kWeakestRows` function is a solution to the problem of finding the `k` weakest rows in a matrix. Each row represents a group of soldiers, and the number of soldiers in each row is counted. The rows are then sorted based on the number of soldiers and their index, in ascending order. Finally, the indices of the `k` weakest rows are stored in an array and returned as the result.
+
+**Here's a step-by-step explanation of how the code works:**
+
+1. The code starts by initializing the variables `N` and `M`, where `N` represents *the number of rows in the matrix* and `M` represents *the number of columns*. It also creates a 2D array called `rowAndSoldiers`, which will store *the number of soldiers and the index for each row*.
+
+2. The code enters a loop that iterates over each row of the matrix. For each row, it counts the number of soldiers using the `countSoldiers` method. This method uses binary search to find *the index of the rightmost soldier* in the row by checking the middle element of the row and adjusting the search range accordingly.
+
+3. So on, the row number and the count of soldiers for each row are stored in the `rowAndSoldiers` array.
+
+4. The `rowAndSoldiers` array is then sorted using a custom comparator. The comparator compares rows based on their soldier counts. If two rows have the same soldier count, it compares their indices. The purpose of this sorting is to arrange the rows in ascending order of soldier count and, in case of a tie, in ascending order of row index.
+
+5. An integer array called `kWeakestRows` is created to store *the indices of the `k` weakest rows*.
+
+6. The code enters another loop that iterates `k` times. In each iteration, it retrieves the row index from the sorted `rowAndSoldiers` array and stores it in the `kWeakestRows` array.
+
+7. Finally, the `kWeakestRows` array containing *the indices of the k weakest rows* is returned as the result.
+
+Overall, the code efficiently solves the problem by counting the soldiers in each row, sorting the rows based on their counts and indices, and returning the indices of the k weakest rows.
+
+## Complexity
+- Time complexity: $$O(N*logN)$$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+The time complexity of the given code is $$O(N*M + N*logN + k)$$ where N is the number of rows, M is the number of columns and `k` is the target weakest rows.
+
+Counting the soldiers in each row requires visiting each element in the matrix, resulting in a time complexity of $$O(N * M)$$. Sorting the `rowAndSoldiers` array using `Arrays.sort` has a time complexity of $$O(N*logN)$$ because it based on the *TimSort algorithm*.
+Finally ,the loop the populates the `kWeakestRows` array runs `k` times, resulting in a time complexity of $$O(k)$$.
+There fore, the overall time complexity is dominated by the sorting step, resulting in $$O(N*logN)$$
+
+- Space complexity: $$O(N)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+The space complexity of the code is $$O(N)$$, where `N` is the number of rows in the matrix, this is because the `rowAndSoldiers` array is created to store the soldier counts and indices for each row. The space required for this array is proportional to the number of rows, which is `N`. The additional space used by other vars and arrays is constant and does not scale with the input size.
+
+## Code
+``` java []
+class Solution {
+    public int[] kWeakestRows(int[][] mat, int k) {
+        int N = mat.length, M = mat[0].length;
+        int[][] rowAndSoldiers = new int[N][2];
+        for(int i = 0; i < N; i++)
+            rowAndSoldiers[i] = new int[] { countSoldiers(mat[i]), i};
+        Arrays.sort(rowAndSoldiers, (x, y) ->
+            (x[0] == y[0]) ? Integer.compare(x[1], y[1]) : Integer.compare(x[0], y[0]));
+        int[] kWeakestRows = new int[k];
+        for(int i = 0; i < k; i++)
+            kWeakestRows[i] = rowAndSoldiers[i][1];
+        
+        return kWeakestRows;
+    }
+    private int countSoldiers(int[] v) {
+        int low = 0, high = v.length - 1;
+        while(low <= high) {
+            int mid = low + (high - low) / 2;
+            if(v[mid] > 0)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return low;
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Special Array with X Elements Greater Than or Equal X
+## Intuition & Approach
+The `specialArray` function implements a solution to *find a "special" integer within an array*. Here's an intuition and approach for how the code works:
+
+1. The `specialArray` method takes an array of integers `nums` as input and returns an integer.
+
+2. It initializes `low` and `high` variables to define *the range of possible values for the special integer*. `low` is initially set to `0`, and `high` is set to *the length of the input array*.
+
+3. The code enters a while loop that *continues as long as `low` is less than or equal to `high`*. This loop uses a **binary search algorithm** to efficiently narrow down the range and find the special integer.
+
+4. Inside the loop, it calculates the midpoint `mid` of the current range. This midpoint represents the value being checked for its special property.
+
+5. The `countGreaterOrEqual` method is called, passing the array nums and the current midpoint `mid` as arguments. This method iterates over the array and *counts the number of elements that are greater than or equal to mid*.
+
+6. If the count `cgoe` is equal to `mid`, it means that `mid` is the special integer. In this case, the method returns `mid` as the result.
+
+7. If `cgoe` is greater than `mid`, it implies that there are more than `mid` elements in `nums` that are greater than or equal to `mid`. Therefore, the special integer should be in the range `[mid + 1, high]`. Consequently, `low` is updated to `mid + 1` to search in the higher range.
+
+8. If `cgoe` is less than mid, it indicates that there are fewer than `mid` elements in `nums` that are greater than or equal to `mid`. Thus, the special integer should be in the range `[low, mid - 1]`. Consequently, `high` is updated to `mid - 1` to search in the lower range.
+
+9. If the while loop completes without finding the special integer, the method returns `-1` to indicate that there is no special integer in the array.
+
+The ***binary search algorithm*** employed in this code allows for efficient searching in the array. It repeatedly divides the search range in half, reducing the search space by half with each iteration. This approach results in a time complexity of $$O(log n)$$, where n is the size of the input array (within each iteration of the binary search, it calls the `countGreaterOrEqual` method, which has a time complexity of $$O(n)$$ due to the loop iterating over the entire array).
+
+Additionally, the code uses the ***principle of breaking down*** a complex problem into smaller subproblems. By dividing the search range and counting the number of elements greater than or equal to a particular value, the algorithm progressively narrows down the search space until the special integer is found or the search range is exhausted.
+
+## Complexity
+- Time complexity: $$O(n*logn)$$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity: $$O(1)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+## Code
+```
+class Solution {
+    public int specialArray(int[] nums) {
+        int low = 0, high = nums.length;
+        while(low <= high) {
+            int mid = low + (high - low) / 2, 
+                cgoe = countGreaterOrEqual(nums, mid);
+                
+            if(cgoe == mid)
+                return mid;
+            else if(cgoe > mid)
+                low = mid + 1;
+            else
+                high = mid - 1;
+        }
+        return -1;
+    }
+    private int countGreaterOrEqual(int[] m, int v) {
+        int c = 0;
+        for(int i = 0; i < m.length; i++)
+            if(m[i] >= v)
+                c++;
+        
+        return c;
     }
 }
 ```
