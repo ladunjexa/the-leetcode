@@ -45,7 +45,7 @@ only, and it is **not** meant to be used for production.*
 * [1323. Maximum 69 Number](#maximum-69-number)
 * [1572. Matrix Diagonal Sum](#matrix-diagonal-sum)
 * [1337. The K Weakest Rows in a Matrix](#the-k-weakest-rows-in-a-matrix)
-* [1608. Special-Array-With-X-Elements-Greater-Than-or-Equal-X](#special-array-with-x-elements-greater-than-or-equal-x)
+* [1608. Special Array With X Elements Greater Than or Equal X](#special-array-with-x-elements-greater-than-or-equal-x)
 * [2660. Determine the Winner of a Bowling Game](#determine-the-winner-of-a-bowling-game)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
