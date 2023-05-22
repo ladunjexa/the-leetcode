@@ -342,6 +342,7 @@ leetcode/
 |144| [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | [Java](./Algorithms/0144-Binary-Tree-Preorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |145| [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | [Java](./Algorithms/0145-Binary-Tree-Postorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |226| [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | [Java](./Algorithms/0226-Invert-Binary-Tree/) | *N/A* | *N/A* | Easy ||
+|235| [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | [Java](./Algorithms/0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree) | *O(logn)* | *O(logn)* | Medium | [View](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/3551611/java-easy-to-understand-recursion-t-s-complexity-o-log-n/) discussion on leetcode |
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |404| [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [Java](./Algorithms/0404-Sum-of-Left-Leaves/) | *N/A* | *N/A* | Easy ||
 |617| [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [Java](./Algorithms/0617-Merge-Two-Binary-Trees/) | *N/A* | *N/A* | Easy ||
@@ -392,6 +393,7 @@ leetcode/
 |144| [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | [Java](./Algorithms/0144-Binary-Tree-Preorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |145| [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | [Java](./Algorithms/0145-Binary-Tree-Postorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |226| [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | [Java](./Algorithms/0226-Invert-Binary-Tree/) | *N/A* | *N/A* | Easy ||
+|235| [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | [Java](./Algorithms/0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree) | *O(logn)* | *O(logn)* | Medium | [View](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/3551611/java-easy-to-understand-recursion-t-s-complexity-o-log-n/) discussion on leetcode |
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |404| [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [Java](./Algorithms/0404-Sum-of-Left-Leaves/) | *N/A* | *N/A* | Easy ||
 |617| [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [Java](./Algorithms/0617-Merge-Two-Binary-Trees/) | *N/A* | *N/A* | Easy ||
@@ -440,6 +442,7 @@ leetcode/
 |144| [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) | [Java](./Algorithms/0144-Binary-Tree-Preorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |145| [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) | [Java](./Algorithms/0145-Binary-Tree-Postorder-Traversal/) | *N/A* | *N/A* | Easy ||
 |226| [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | [Java](./Algorithms/0226-Invert-Binary-Tree/) | *N/A* | *N/A* | Easy ||
+|235| [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | [Java](./Algorithms/0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree) | *O(logn)* | *O(logn)* | Medium | [View](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/3551611/java-easy-to-understand-recursion-t-s-complexity-o-log-n/) discussion on leetcode |
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |404| [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [Java](./Algorithms/0404-Sum-of-Left-Leaves/) | *N/A* | *N/A* | Easy ||
 |617| [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [Java](./Algorithms/0617-Merge-Two-Binary-Trees/) | *N/A* | *N/A* | Easy ||
