@@ -99,6 +99,7 @@ leetcode/
 * [String](#string)
 * [Linked List](#linked-list)
 * [Stack](#stack)
+* [Monotonic Stack](#monotonic-stack)
 * [Queue](#queue)
 * [Binary Heap](#binary-heap)
 * [Tree](#tree)
@@ -113,6 +114,8 @@ leetcode/
 * [Depth-First Search](#depth-first-search)
 * [Backtracking](#backtracking)
 * [Dynamic Programming](#dynamic-programming)
+* [Divide and Conquer](#divide-and-conquer)
+* [Memoization](#memoization)
 * [Greedy](#greedy)
 * [Graph](#graph)
 * [Geometry](#geometry)
@@ -122,6 +125,8 @@ leetcode/
 * [Game Theory](#game-theory)
 * [Sorting](#sorting)
 * [Prefix Sum](#prefix-sum)
+* [Sliding Window](#sliding-window)
+* [Data Stream](#data-stream)
 * [Concurrency](#concurrency)
 
 ### Database
@@ -175,8 +180,10 @@ leetcode/
 ### Design
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|208| [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Java](./Algorithms/0208-Implement-Trie-(Prefix-Tree)) | *N/A* | *N/A* | Medium ||
 |225| [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | [Java](./Algorithms/0225-implement-stack-using-queues/) | *N/A* | *N/A* | Easy ||
 |232| [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | [Java](./Algorithms/0232-implement-queue-using-stacks/) | *N/A* | *N/A* | Easy ||
+|933| [Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [Java](./Algorithms/0933-Number-of-Recent-Calls) | *N/A* | *N/A* | Easy ||
 
 ### Queue
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -184,6 +191,8 @@ leetcode/
 |225| [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | [Java](./Algorithms/0225-implement-stack-using-queues/) | *N/A* | *N/A* | Easy ||
 |232| [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | [Java](./Algorithms/0232-implement-queue-using-stacks/) | *N/A* | *N/A* | Easy ||
 |387| [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | [Java](./Algorithms/0387-First-Unique-Character-in-a-String/) | *N/A* | *N/A* | Easy ||
+|649| [Dota2 Senate](https://leetcode.com/problems/dota2-senate/) | [Java](./Algorithms/0649-Dota2-Senate/) | *N/A* | *N/A* | Medium ||
+|933| [Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [Java](./Algorithms/0933-Number-of-Recent-Calls) | *N/A* | *N/A* | Easy ||
 
 ### Stack
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -195,6 +204,16 @@ leetcode/
 |225| [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | [Java](./Algorithms/0225-implement-stack-using-queues/) | *N/A* | *N/A* | Easy ||
 |232| [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | [Java](./Algorithms/0232-implement-queue-using-stacks/) | *N/A* | *N/A* | Easy ||
 |234| [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [Java](./Algorithms/0234-palindrome-linked-list/) | *N/A* | *N/A* | Easy ||
+|394| [Decode String](https://leetcode.com/problems/decode-string/) | [Java](./Algorithms/0394-Decode-String) | *N/A* | *N/A* | Medium ||
+|735| [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) | [Java](./Algorithms/0735-Asteroid-Collision) | *O(N + k)* | *O(N)* | Medium ||
+|739| [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [Java](./Algorithms/0739-Daily-Temperatures/) | *O(N)* | *O(N)* | Medium ||
+|2130| [Leaf Similar Trees](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/) | [Java](./Algorithms/2130-Leaf-Similar-Trees/) | *O(N)* | *O(N)* | Medium ||
+|2390| [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/) | [Java](./Algorithms/2390-Removing-Stars-From-a-String) | *O(N)* | *O(NlogN)* | Medium ||
+
+### Monotonic Stack
+|  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
+|-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|739| [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [Java](./Algorithms/0739-Daily-Temperatures/) | *O(N)* | *O(N)* | Medium ||
 
 ### Brainteaser
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -224,18 +243,42 @@ leetcode/
 |1385| [Find the Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | [Java](./Algorithms/1385-Find-the-Distance-Value-Between-Two-Arrays/) | *N/A* | *N/A* | Easy ||
 |1491| [Average Salary Excluding the Minimum and Maximum Salary](https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/) | [Java](./Algorithms/1491-Average-Salary-Excluding-the-Minimum-Salary-and-Maximum-Salary/) | *N/A* | *N/A* | Easy ||
 |1608| [Special Array With X Elements Greater Than or Equal X](https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/) | [Java](./Algorithms/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/) | *O(nlogn)* | *O(1)* | Easy | [View](https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/solutions/3540474/java-easy-to-understand-t-o-nlogn-s-o-1-runtime-100-0ms-memory-54-55-40-4mb/) discussion on leetcode |
+|1657| [Determine if Two Strings Are Close](https://leetcode.com/problems/determine-if-two-strings-are-close) | [Java](./Algorithms/1657-Determine-if-Two-Strings-Are-Closed) | *O(N)* | *O(1)* | Medium ||
+|1679| [Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs) | [Java](./Algorithms/1679-Max-Number-of-K-Sum-Pairs) | *O(N)* | *O(1)* | Medium ||
 
 ### Prefix Sum
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|238| [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [Java](./Algorithms/0238-Product-of-Array-Except-Self) | *O(N)* | *O(N)* | Medium ||
 |724| [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) | [Java](./Algorithms/0724-find-pivot-index/) | *N/A* | *N/A* | Easy ||
+|1004| [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [Java](./Algorithms/1004-Max-Consecutive-Ones-III) | *O(N + k)* | *O(1)* | Medium ||
 |1480| [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/) | [Java](./Algorithms/1480-Running-Sum-of-1D-Array/) | *N/A* | *N/A* | Easy ||
+|1732| [Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/) | [Java](./Algorithms/1732-Find-the-Highest-Altitude) | *O(N)* | *O(1)* | Easy ||
+
+### Sliding Window
+|  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
+|-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|3| [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Java](./Algorithms/0003-Longest-Substring-Without-Repeating-Characters/) | *N/A* | *N/A* | Medium ||
+|219| [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | [Java](./Algorithms/0219-Contains-Duplicate-II/) | *O(N)* | *O(N)* | Easy ||
+|567| [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [Java](./Algorithms/0567-Permutation-in-String/) | *N/A* | *N/A* | Medium ||
+|643| [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) | [Java](./Algorithms/0643-Maximum-Average-Subarray-I/) | *O(N)* | *O(1)* | Easy ||
+|1004| [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [Java](./Algorithms/1004-Max-Consecutive-Ones-III) | *O(N + k)* | *O(1)* | Medium ||
+|1456| [Maximum Number of Vowels in a Substring of Given Length](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | [Java](./Algorithms/1456-Maximum-Number-of-Vowels-in-a-Substring-of-Given-Length/) | *O(N)* | *O(1)* | Medium ||
+|1493| [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | [Java](./Algorithms/1493-Longest-Subarray-of-1's-After-Deleting-One-Element) | *O(N + k)* | *O(1)* | Medium ||
+
+### Data Stream
+|  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
+|-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|933| [Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [Java](./Algorithms/0933-Number-of-Recent-Calls) | *N/A* | *N/A* | Easy ||
 
 ### Greedy
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
 |11| [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | [Java](./Algorithms/0011-Container-With-Most-Water/) | *N/A* | *N/A* | Medium ||
+|334| [Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | [Java](./Algorithms/0334-Increasing-Triplet-Subsequence/) | *O(N)* | *O(1)* | Medium ||
 |455| [Assign Cookies](https://leetcode.com/problems/assign-cookies/) | [Java](./Algorithms/0728-assign-cookies/) | *N/A* | *N/A* | Easy ||
+|605| [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/) | [Java](./Algorithms/0605-Can-Place-Flowers) | *O(N)* | *O(1)* | Easy ||
+|649| [Dota2 Senate](https://leetcode.com/problems/dota2-senate/) | [Java](./Algorithms/0649-Dota2-Senate/) | *N/A* | *N/A* | Medium ||
 |680| [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | [Java](./Algorithms/0680-Valid-Palindrome-II/) | *N/A* | *N/A* | Easy ||
 |1323| [Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/) | [Java](./Algorithms/1323-Maximum-69-Number/) | *O(n)* | *O(n)* | Easy | [View](https://leetcode.com/problems/maximum-69-number/solutions/3485774/java-well-detailed-iteration-runtime-beats-100-0ms-memory-beats-9028-39mb//) discussion on leetcode |
 |1855| [Maximum Distance Between a Pair of Values](https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/description/) | [Java](./Algorithms/1855-Maximum-Distance-Between-a-Pair-of-Values) | *N/A* | *N/A* | Medium ||
@@ -255,6 +298,7 @@ leetcode/
 |1351| [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | [Java](./Algorithms/1351-Count-Negative-Numbers-in-a-Sorted-Matrix/) | *N/A* | *N/A* | Easy ||
 |1572| [Matrix Diagonal Sum](https://leetcode.com/problems/matrix-diagonal-sum/) | [Java](./Algorithms/1572-Matrix-Diagonal-Sum/) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/matrix-diagonal-sum/solutions/3502477/java-well-detailed-iteration-runtime-beats-100-0ms-memory-beats-45-40-42-8mb/) discussion on leetcode |
 |1672| [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/) | [Java](./Algorithms/1672-Richest-Customer-Wealth/) | *N/A* | *N/A* | Easy ||
+|2352| [Equal Row and Column Pairs](https://leetcode.com/problems/equal-row-and-column-pairs/) | [Java](./Algorithms/2352-Equal-Row-and-Column-Pairs) | *O(N^3)* | *O(1)* | Medium ||
 
 ### Simulation
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -263,6 +307,8 @@ leetcode/
 |258| [Add Digits](https://leetcode.com/problems/add-digits/) | [Java](./Algorithms/0258-add-digits/) | *N/A* | *N/A* | Easy ||
 |412| [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | [Java](./Algorithms/0412-Fizz-Buzz/) | *N/A* | *N/A* | Easy ||
 |867| [Transpose Matrix](https://leetcode.com/problems/transpose-matrix/) | [Java](./Algorithms/0867-Transpose-Matrix/) | *N/A* | *N/A* | Easy ||
+|2352| [Equal Row and Column Pairs](https://leetcode.com/problems/equal-row-and-column-pairs/) | [Java](./Algorithms/2352-Equal-Row-and-Column-Pairs) | *O(N^3)* | *O(1)* | Medium ||
+|2390| [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/) | [Java](./Algorithms/2390-Removing-Stars-From-a-String) | *O(N)* | *O(NlogN)* | Medium ||
 |2660| [Determine the Winner of a Bowling Game](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/) | [Java](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/), [Python](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/Solution.py), [JavaScript](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/Solution.js) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/solutions/3485713/java-python-js-explained-iteration-runtime-beats-99-91-2ms-memory-beats-68-42-7mb/) discussion on leetcode |
 
 ### Dynamic Programming
@@ -275,8 +321,12 @@ leetcode/
 |121| [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [Java](./Algorithms/0121-Best-Time-to-Buy-and-Sell-Stock/) | *N/A* | *N/A* | Easy ||
 |118| [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/) | [Java](./Algorithms/0118-Pascal's-Triangle/) | *O(n^2)* | *O(n^2)* | Easy | [View](https://leetcode.com/problems/pascals-triangle/solutions/3514078/java-well-detailed-dp-runtime-beats-94-22-1ms-memory-beats-35-49-42-4mb/) discussion on leetcode |
 |119| [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-II/) | [Java](./Algorithms/0119-Pascal's-Triangle-II/) | *O(n)* | *O(n)* | Easy | [View](https://leetcode.com/problems/pascals-triangle-ii/solutions/3514150/java-naive-sophisticated-solutions-runtime-beats-100-0ms-memory-beats-80-5-40-2mb/) discussion on leetcode |
+|198| [House Robber](https://leetcode.com/problems/house-robber/) | [Java](./Algorithms/0198-House-Robber) | *O(N)* | *O(N)* | Medium ||
 |338| [Counting Bits](https://leetcode.com/problems/counting-bits/) | [Java](./Algorithms/0338-counting-bits/) | *N/A* | *N/A* | Easy ||
+|392| [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | [Java](./Algorithms/0392-Is-Subsequence) | *N/A* | *N/A* | Easy ||
 |542| [01 Matrix](https://leetcode.com/problems/01-matrix/) | [Java](./Algorithms/0542-01-Matrix/) | *O(nm)* | *O(nm)* | Medium | [View](https://leetcode.com/problems/01-matrix/solutions/3532337/java-easy-to-understand-dynamic-programming-t-s-o-n-m/) discussion on leetcode |
+|1137| [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) | [Java](./Algorithms/1137-N-th-Tribonacci-Number) | *N/A* | *N/A* | Easy ||
+|1493| [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | [Java](./Algorithms/1493-Longest-Subarray-of-1's-After-Deleting-One-Element) | *O(N + k)* | *O(1)* | Medium ||
 |1863| [Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subsets-xor-totals/) | [Java](./Algorithms/1863-Sum-of-All-Subset-XOR-Totals/) | *N/A* | *N/A* | Easy ||
 
 ### Divide and Conquer
@@ -288,10 +338,17 @@ leetcode/
 |190| [Reverse Bits](https://leetcode.com/problems/reverse-bits/) | [Java](./Algorithms/0190-Reverse-Bits/) | *N/A* | *N/A* | Easy ||
 |191| [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | [Java](./Algorithms/0191-Number-of-1-Bits/) | *N/A* | *N/A* | Easy ||
 
+### Memoization
+|  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
+|-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|70| [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [Java](./Algorithms/0070-Climbing-Stairs/) | *N/A* | *N/A* | Easy ||
+|1137| [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) | [Java](./Algorithms/1137-N-th-Tribonacci-Number) | *N/A* | *N/A* | Easy ||
+
 ### Trie
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
 |14| [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | [Java](./Algorithms/0014-Longest-Common-Prefix/) | *N/A* | *N/A* | Hard ||
+|208| [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Java](./Algorithms/0208-Implement-Trie-(Prefix-Tree)) | *N/A* | *N/A* | Medium ||
 
 ### Math
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -321,6 +378,7 @@ leetcode/
 |441| [Arranging Coins](https://leetcode.com/problems/arranging-coins/) | [Java](./Algorithms/0441-arranging-coins/) | *O(logn)* | *O(1)* | Easy ||
 |633| [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | [Java](./Algorithms/0633-Sum-of-Square-Numbers/) | *O(n)* | *O(1)* | Medium ||
 |728| [Self Dividing Numbers](https://leetcode.com/problems/self-dividing-numbers/) | [Java](./Algorithms/0728-self-dividing-numbers/) | *N/A* | *N/A* | Easy ||
+|1137| [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) | [Java](./Algorithms/1137-N-th-Tribonacci-Number) | *N/A* | *N/A* | Easy ||
 |1323| [Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/) | [Java](./Algorithms/1323-Maximum-69-Number/) | *O(n)* | *O(n)* | Easy | [View](https://leetcode.com/problems/maximum-69-number/solutions/3485774/java-well-detailed-iteration-runtime-beats-100-0ms-memory-beats-9028-39mb//) discussion on leetcode |
 |1342| [Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | [Java](./Algorithms/1342-Number-of-Steps-to-Reduce-a-Number-to-Zero/) | *N/A* | *N/A* | Easy ||
 |1822| [Sign of the Product of an Array](https://leetcode.com/problems/sign-of-the-product-of-an-array/) | [Java](./Algorithms/1822-Sign-of-the-Product-of-an-Array/) | *N/A* | *N/A* | Easy ||
@@ -345,10 +403,12 @@ leetcode/
 |235| [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | [Java](./Algorithms/0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree) | *O(logn)* | *O(logn)* | Medium | [View](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/3551611/java-easy-to-understand-recursion-t-s-complexity-o-log-n/) discussion on leetcode |
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |404| [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [Java](./Algorithms/0404-Sum-of-Left-Leaves/) | *N/A* | *N/A* | Easy ||
+|450| [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) | [Java](./Algorithms/0450-Delete-Node-in-a-BST) | *N/A* | *N/A* | Medium ||
 |617| [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [Java](./Algorithms/0617-Merge-Two-Binary-Trees/) | *N/A* | *N/A* | Easy ||
 |653| [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) | [Java](./Algorithms/0653-Two-Sum-IV-Input-is-a-BST/) | *N/A* | *N/A* | Easy ||
 |700| [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [Java](./Algorithms/0700-Search-in-a-Binary-Search-Tree/) | *N/A* | *N/A* | Easy ||
 |701| [Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/) | [Java](./Algorithms/0701-Insert-into-a-Binary-Search-Tree/) | *N/A* | *N/A* | Medium ||
+|872| [Leaf Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [Java](./Algorithms/0872-Leaf-Similar-Trees) | *N/A* | *N/A* | Easy ||
 
 ### Binary Search
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -365,10 +425,12 @@ leetcode/
 |367| [Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/) | [Java](./Algorithms/0367-Valid-Perfect-Square/) | *N/A* | *N/A* | Easy ||
 |374| [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) | [Java](./Algorithms/0374-Guess-Number-Higher-or-Lower/) | *O(logn)* | *O(1)* | Easy ||
 |441| [Arranging Coins](https://leetcode.com/problems/arranging-coins/) | [Java](./Algorithms/0441-arranging-coins/) | *O(logn)* | *O(1)* | Easy ||
+|450| [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) | [Java](./Algorithms/0450-Delete-Node-in-a-BST) | *N/A* | *N/A* | Medium ||
 |633| [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | [Java](./Algorithms/0633-Sum-of-Square-Numbers/) | *O(n)* | *O(1)* | Medium ||
 |704| [Binary Search](https://leetcode.com/problems/binary-search/) | [Java](./Algorithms/0704-Binary-Search/Solution.java), [Python](./Algorithms/0704-Binary-Search/Solution.py), [C#](./Algorithms/0704-Binary-Search/Solution.cs), [JavaScript](./Algorithms/0704-Binary-Search/Solution.js), [TypeScript](./Algorithms/0704-Binary-Search/Solution.ts) | *O(logn)* | *O(1)* | Easy ||
 |744| [Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) | [Java](./Algorithms/0744-Find-Smallest-Letter-Greater-Than-Target/) | *N/A* | *N/A* | Easy ||
 |852| [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/) | [Java](./Algorithms/0852-Peak-Index-in-a-Mountain-Array/) | *O(logn)* | *O(1)* | Easy ||
+|1004| [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [Java](./Algorithms/1004-Max-Consecutive-Ones-III) | *O(N + k)* | *O(1)* | Medium ||
 |1337| [The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | [Java](./Algorithms/1337-The-K-Weakest-Rows-in-a-Matrix/) | *O(nlogm)* | *O(n)* | Easy | [View](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/solutions/3540636/java-comprehensive-t-o-n-logm-s-o-n-runtime-99-58-1ms-memory-11-88-44-5mb/) discussion on leetcode |
 |1346| [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | [Java](./Algorithms/1346-Check-If-N-and-Its-Double-exist/) | *N/A* | *N/A* | Easy ||
 |1351| [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | [Java](./Algorithms/1351-Count-Negative-Numbers-in-a-Sorted-Matrix/) | *N/A* | *N/A* | Easy ||
@@ -396,10 +458,12 @@ leetcode/
 |235| [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | [Java](./Algorithms/0235-Lowest-Common-Ancestor-of-a-Binary-Search-Tree) | *O(logn)* | *O(logn)* | Medium | [View](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/3551611/java-easy-to-understand-recursion-t-s-complexity-o-log-n/) discussion on leetcode |
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |404| [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) | [Java](./Algorithms/0404-Sum-of-Left-Leaves/) | *N/A* | *N/A* | Easy ||
+|450| [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/) | [Java](./Algorithms/0450-Delete-Node-in-a-BST) | *N/A* | *N/A* | Medium ||
 |617| [Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/) | [Java](./Algorithms/0617-Merge-Two-Binary-Trees/) | *N/A* | *N/A* | Easy ||
 |653| [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) | [Java](./Algorithms/0653-Two-Sum-IV-Input-is-a-BST/) | *N/A* | *N/A* | Easy ||
 |700| [Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/) | [Java](./Algorithms/0700-Search-in-a-Binary-Search-Tree/) | *N/A* | *N/A* | Easy ||
 |701| [Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/) | [Java](./Algorithms/0701-Insert-into-a-Binary-Search-Tree/) | *N/A* | *N/A* | Medium ||
+|872| [Leaf Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [Java](./Algorithms/0872-Leaf-Similar-Trees) | *N/A* | *N/A* | Easy ||
 
 ### Hash Table
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -415,7 +479,9 @@ leetcode/
 |160| [Intersection of Two Linked Lists](https://leetcode.com/problems/Intersection-of-Two-Linked-Lists/) | [Java](./Algorithms/0160-Intersection-of-Two-Linked-Lists/) | *N/A* | *N/A* | Easy ||
 |202| [Happy Number](https://leetcode.com/problems/happy-number/) | [Java](./Algorithms/0202-Happy-Number/) | *O(k∗logn)* | *O(k)* | Easy | [View](https://leetcode.com/problems/happy-number/solutions/3485979/java-well-detailed-recursion-runtime-beats-100-0ms-memory-beats-8286-396mb/) discussion on leetcode |
 |205| [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | [Java](./Algorithms/0205-isomorphic-strings/) | *O(n)* | *O(1)* | Easy ||
+|208| [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Java](./Algorithms/0208-Implement-Trie-(Prefix-Tree)) | *N/A* | *N/A* | Medium ||
 |217| [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | [Java](./Algorithms/0217-Contains-Duplicate/) | *N/A* | *N/A* | Easy ||
+|219| [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | [Java](./Algorithms/0219-Contains-Duplicate-II/) | *O(N)* | *O(N)* | Easy ||
 |242| [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [Java](./Algorithms/0242-Valid-Anagram/) | *N/A* | *N/A* | Easy ||
 |290| [Word Pattern](https://leetcode.com/problems/word-pattern/) | [Java](./Algorithms/0290-word-pattern/) | *N/A* | *N/A* | Easy ||
 |350| [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | [Java](./Algorithms/0350-Intersection-of-Two-Arrays-II/) | *N/A* | *N/A* | Easy ||
@@ -424,9 +490,12 @@ leetcode/
 |389| [Find the Difference](https://leetcode.com/problems/find-the-difference/) | [Java](./Algorithms/0389-find-the-difference/) | *N/A* | *N/A* | Easy ||
 |567| [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [Java](./Algorithms/0567-Permutation-in-String/) | *N/A* | *N/A* | Medium ||
 |653| [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) | [Java](./Algorithms/0653-Two-Sum-IV-Input-is-a-BST/) | *N/A* | *N/A* | Easy ||
+|1207| [Unique Number of Occurrences](https://leetcode.com/problems/unique-number-of-occurrences/) | [Java](./Algorithms/1207-Unique-Number-of-Occurrences) | *O(N)* | *O(N)* | Easy ||
 |1346| [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | [Java](./Algorithms/1346-Check-If-N-and-Its-Double-exist/) | *N/A* | *N/A* | Easy ||
+|1657| [Determine if Two Strings Are Close](https://leetcode.com/problems/determine-if-two-strings-are-close) | [Java](./Algorithms/1657-Determine-if-Two-Strings-Are-Closed) | *O(N)* | *O(1)* | Medium ||
+|1679| [Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs) | [Java](./Algorithms/1679-Max-Number-of-K-Sum-Pairs) | *O(N)* | *O(1)* | Medium ||
 |2215| [Find the Difference of Two Arrays](https://leetcode.com/problems/find-the-difference-of-two-arrays/) | [Java](./Algorithms/2215-Find-the-Difference-of-Two-Arrays/) | *N/A* | *N/A* | Easy ||
-
+|2352| [Equal Row and Column Pairs](https://leetcode.com/problems/equal-row-and-column-pairs/) | [Java](./Algorithms/2352-Equal-Row-and-Column-Pairs) | *O(N^3)* | *O(1)* | Medium ||
 
 ### Depth-First Search
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -449,6 +518,7 @@ leetcode/
 |653| [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/) | [Java](./Algorithms/0653-Two-Sum-IV-Input-is-a-BST/) | *N/A* | *N/A* | Easy ||
 |695| [Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [Java](./Algorithms/0695-Max-Area-of-Island/) | *N/A* | *N/A* | Medium ||
 |733| [Flood Fill](https://leetcode.com/problems/flood-fill/) | [Java](./Algorithms/0733-Flood-Fill/) | *N/A* | *N/A* | Easy ||
+|872| [Leaf Similar Trees](https://leetcode.com/problems/leaf-similar-trees/) | [Java](./Algorithms/0872-Leaf-Similar-Trees) | *N/A* | *N/A* | Easy ||
 
 ### Breadth-First Search
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -481,6 +551,7 @@ leetcode/
 |234| [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [Java](./Algorithms/0234-palindrome-linked-list/) | *N/A* | *N/A* | Easy ||
 |326| [Power of Three](https://leetcode.com/problems/power-of-three/) | [Java](./Algorithms/0326-Power-of-Three/) | *O(log<sub>3</sub>n)* | *O(log<sub>3</sub>n)* | Easy | [View](https://leetcode.com/problems/power-of-three/solutions/3485834/java-well-detailed-recursion-runtime-beats-999-1ms-memory-beats-6246-424mb/) discussion on leetcode |
 |342| [Power of Four](https://leetcode.com/problems/power-of-four/) | [Java](./Algorithms/0342-Power-of-Four/) | *N/A* | *N/A* | Easy ||
+|394| [Decode String](https://leetcode.com/problems/decode-string/) | [Java](./Algorithms/0394-Decode-String) | *N/A* | *N/A* | Medium ||
 
 ### Array
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -510,36 +581,51 @@ leetcode/
 |153| [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | [Java](./Algorithms/0153-Find-Minimum-In-Rotated-Sorted-Array) | *N/A* | *N/A* | Medium ||
 |167| [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java](./Algorithms/0167-Two-Sum-II-Input-Array-Is-Sorted/) | *O(n)* | *O(1)* | Medium | [View](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/solutions/3490974/java-well-detailed-two-pointers-runtime-beats-9880-1ms-memory-beats-8131-451mb/) discussion on leetcode |
 |189| [Rotate Array](https://leetcode.com/problems/rotate-array/) | [Java](./Algorithms/0189-Rotate-Array/) | *N/A* | *O(1)* | Medium | [View](https://leetcode.com/problems/rotate-array/solutions/3487654/java-explained-array-manipulation-runtime-beats-100-0ms-memory-beats-23-2-58-9mb/) discussion on leetcode |
+|198| [House Robber](https://leetcode.com/problems/house-robber/) | [Java](./Algorithms/0198-House-Robber) | *O(N)* | *O(N)* | Medium ||
 |217| [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | [Java](./Algorithms/0217-Contains-Duplicate/) | *N/A* | *N/A* | Easy ||
+|219| [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | [Java](./Algorithms/0219-Contains-Duplicate-II/) | *O(N)* | *O(N)* | Easy ||
 |228| [Summary Ranges](https://leetcode.com/problems/summary-ranges/) | [Java](./Algorithms/0228-summary-ranges/) | *N/A* | *N/A* | Easy ||
+|238| [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [Java](./Algorithms/0238-Product-of-Array-Except-Self) | *O(N)* | *O(N)* | Medium ||
 |283| [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Java](./Algorithms/0283-Move-Zeroes/) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/move-zeroes/solutions/3490931/java-well-detailed-two-pointers-runtime-beats-99-98-1ms-memory-beats-56-79-43-9mb/) discussion on leetcode |
+|334| [Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/) | [Java](./Algorithms/0334-Increasing-Triplet-Subsequence/) | *O(N)* | *O(1)* | Medium ||
 |350| [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | [Java](./Algorithms/0350-Intersection-of-Two-Arrays-II/) | *N/A* | *N/A* | Easy ||
 |414| [Third Maximum Number](https://leetcode.com/problems/third-maximum-number/) | [Java](./Algorithms/0414-third-maximum-number/) | *N/A* | *N/A* | Easy ||
 |455| [Assign Cookies](https://leetcode.com/problems/assign-cookies/) | [Java](./Algorithms/0728-assign-cookies/) | *N/A* | *N/A* | Easy ||
 |542| [01 Matrix](https://leetcode.com/problems/01-matrix/) | [Java](./Algorithms/0542-01-Matrix/) | *O(nm)* | *O(nm)* | Medium | [View](https://leetcode.com/problems/01-matrix/solutions/3532337/java-easy-to-understand-dynamic-programming-t-s-o-n-m/) discussion on leetcode |
+|605| [Can Place Flowers](https://leetcode.com/problems/can-place-flowers/) | [Java](./Algorithms/0605-Can-Place-Flowers) | *O(N)* | *O(1)* | Easy ||
+|643| [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) | [Java](./Algorithms/0643-Maximum-Average-Subarray-I/) | *O(N)* | *O(1)* | Easy ||
 |695| [Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [Java](./Algorithms/0695-Max-Area-of-Island/) | *N/A* | *N/A* | Medium ||
 |704| [Binary Search](https://leetcode.com/problems/binary-search/) | [Java](./Algorithms/0704-Binary-Search/Solution.java), [Python](./Algorithms/0704-Binary-Search/Solution.py), [C#](./Algorithms/0704-Binary-Search/Solution.cs), [JavaScript](./Algorithms/0704-Binary-Search/Solution.js), [TypeScript](./Algorithms/0704-Binary-Search/Solution.ts) | *O(logn)* | *O(1)* | Easy ||
 |724| [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) | [Java](./Algorithms/0724-find-pivot-index/) | *N/A* | *N/A* | Easy ||
 |733| [Flood Fill](https://leetcode.com/problems/flood-fill/) | [Java](./Algorithms/0733-Flood-Fill/) | *N/A* | *N/A* | Easy ||
+|735| [Asteroid Collision](https://leetcode.com/problems/asteroid-collision/) | [Java](./Algorithms/0735-Asteroid-Collision) | *O(N + k)* | *O(N)* | Medium ||
+|739| [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [Java](./Algorithms/0739-Daily-Temperatures/) | *O(N)* | *O(N)* | Medium ||
 |744| [Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) | [Java](./Algorithms/0744-Find-Smallest-Letter-Greater-Than-Target/) | *N/A* | *N/A* | Easy ||
 |852| [Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/) | [Java](./Algorithms/0852-Peak-Index-in-a-Mountain-Array/) | *O(logn)* | *O(1)* | Easy ||
 |867| [Transpose Matrix](https://leetcode.com/problems/transpose-matrix/) | [Java](./Algorithms/0867-Transpose-Matrix/) | *N/A* | *N/A* | Easy ||
 |977| [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | [Java](./Algorithms/0977-Squares-of-a-Sorted-Array/) | *O(n)* | *O(n)* | Easy | [View](https://leetcode.com/problems/squares-of-a-sorted-array/solutions/3487514/java-well-detailed-two-pointers-runtime-beats-100-1ms-memory-beats-5774-441mb/) discussion on leetcode |
 |994| [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) | [Java](./Algorithms/0994-Rotting-Oranges/) | *N/A* | *N/A* | Medium ||
+|1004| [Max Consecutive Ones III](https://leetcode.com/problems/max-consecutive-ones-iii/) | [Java](./Algorithms/1004-Max-Consecutive-Ones-III) | *O(N + k)* | *O(1)* | Medium ||
+|1207| [Unique Number of Occurrences](https://leetcode.com/problems/unique-number-of-occurrences/) | [Java](./Algorithms/1207-Unique-Number-of-Occurrences) | *O(N)* | *O(N)* | Easy ||
 |1337| [The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | [Java](./Algorithms/1337-The-K-Weakest-Rows-in-a-Matrix/) | *O(nlogm)* | *O(n)* | Easy | [View](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/solutions/3540636/java-comprehensive-t-o-n-logm-s-o-n-runtime-99-58-1ms-memory-11-88-44-5mb/) discussion on leetcode |
 |1346| [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | [Java](./Algorithms/1346-Check-If-N-and-Its-Double-exist/) | *N/A* | *N/A* | Easy ||
 |1351| [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | [Java](./Algorithms/1351-Count-Negative-Numbers-in-a-Sorted-Matrix/) | *N/A* | *N/A* | Easy ||
 |1385| [Find the Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | [Java](./Algorithms/1385-Find-the-Distance-Value-Between-Two-Arrays/) | *N/A* | *N/A* | Easy ||
+|1431| [Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/) | [Java](./Algorithms/1431-Kids-With-the-Greatest-Number-of-Candies) | *O(N)* | *O(N)* | Easy ||
 |1480| [Running Sum of 1D Array](https://leetcode.com/problems/running-sum-of-1d-array/) | [Java](./Algorithms/1480-Running-Sum-of-1D-Array/) | *N/A* | *N/A* | Easy ||
 |1491| [Average Salary Excluding the Minimum and Maximum Salary](https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/) | [Java](./Algorithms/1491-Average-Salary-Excluding-the-Minimum-Salary-and-Maximum-Salary/) | *N/A* | *N/A* | Easy ||
+|1493| [Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | [Java](./Algorithms/1493-Longest-Subarray-of-1's-After-Deleting-One-Element) | *O(N + k)* | *O(1)* | Medium ||
 |1539| [Kth Missing Positive Number](https://leetcode.com/problems/kth-missing-positive-number/) | [Java](./Algorithms/1539-Kth-Missing-Positive-Number/) | *O(logn)* | *O(n)* | Easy ||
 |1572| [Matrix Diagonal Sum](https://leetcode.com/problems/matrix-diagonal-sum/) | [Java](./Algorithms/1572-Matrix-Diagonal-Sum/) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/matrix-diagonal-sum/solutions/3502477/java-well-detailed-iteration-runtime-beats-100-0ms-memory-beats-45-40-42-8mb/) discussion on leetcode |
 |1608| [Special Array With X Elements Greater Than or Equal X](https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/) | [Java](./Algorithms/1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X/) | *O(nlogn)* | *O(1)* | Easy | [View](https://leetcode.com/problems/special-array-with-x-elements-greater-than-or-equal-x/solutions/3540474/java-easy-to-understand-t-o-nlogn-s-o-1-runtime-100-0ms-memory-54-55-40-4mb/) discussion on leetcode |
 |1672| [Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/) | [Java](./Algorithms/1672-Richest-Customer-Wealth/) | *N/A* | *N/A* | Easy ||
+|1679| [Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs) | [Java](./Algorithms/1679-Max-Number-of-K-Sum-Pairs) | *O(N)* | *O(1)* | Medium ||
+|1732| [Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/) | [Java](./Algorithms/1732-Find-the-Highest-Altitude) | *O(N)* | *O(1)* | Easy ||
 |1822| [Sign of the Product of an Array](https://leetcode.com/problems/sign-of-the-product-of-an-array/) | [Java](./Algorithms/1822-Sign-of-the-Product-of-an-Array/) | *N/A* | *N/A* | Easy ||
 |1855| [Maximum Distance Between a Pair of Values](https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/description/) | [Java](./Algorithms/1855-Maximum-Distance-Between-a-Pair-of-Values) | *N/A* | *N/A* | Medium ||
 |1863| [Sum of All Subset XOR Totals](https://leetcode.com/problems/sum-of-all-subsets-xor-totals/) | [Java](./Algorithms/1863-Sum-of-All-Subset-XOR-Totals/) | *N/A* | *N/A* | Easy ||
 |2215| [Find the Difference of Two Arrays](https://leetcode.com/problems/find-the-difference-of-two-arrays/) | [Java](./Algorithms/2215-Find-the-Difference-of-Two-Arrays/) | *N/A* | *N/A* | Easy ||
+|2352| [Equal Row and Column Pairs](https://leetcode.com/problems/equal-row-and-column-pairs/) | [Java](./Algorithms/2352-Equal-Row-and-Column-Pairs) | *O(N^3)* | *O(1)* | Medium ||
 |2660| [Determine the Winner of a Bowling Game](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/) | [Java](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/), [Python](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/Solution.py), [JavaScript](./Algorithms/2660-Determine-the-Winner-of-a-Bowling-Game/Solution.js) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/solutions/3485713/java-python-js-explained-iteration-runtime-beats-99-91-2ms-memory-beats-68-42-7mb/) discussion on leetcode |
 
 ### String
@@ -557,21 +643,32 @@ leetcode/
 |58| [Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | [Java](./Algorithms/0058-Length-of-Last-Word/) | *N/A* | *N/A* | Easy ||
 |67| [Add Binary](https://leetcode.com/problems/add-binary/) | [Java](./Algorithms/0067-Add-Binary/) | *N/A* | *N/A* | Easy ||
 |125| [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | [Java](./Algorithms/0125-Valid-Palindrome/) | *N/A* | *N/A* | Easy ||
+|151| [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | [Java](./Algorithms/0151-Reverse-Words-in-a-String) | *O(N)* | *O(N)* | Medium ||
 |168| [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) | [Java](./Algorithms/0168-excel-sheet-column-title/) | *N/A* | *N/A* | Easy ||
 |171| [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-number/) | [Java](./Algorithms/0171-Excel-Sheet-Column-Number/) | *O(n)* | *O(1)* | Easy ||
 |205| [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | [Java](./Algorithms/0205-isomorphic-strings/) | *O(n)* | *O(1)* | Easy ||
+|208| [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | [Java](./Algorithms/0208-Implement-Trie-(Prefix-Tree)) | *N/A* | *N/A* | Medium ||
 |242| [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [Java](./Algorithms/0242-Valid-Anagram/) | *N/A* | *N/A* | Easy ||
 |257| [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [Java](./Algorithms/0257-binary-tree-paths/) | *N/A* | *N/A* | Easy ||
 |290| [Word Pattern](https://leetcode.com/problems/word-pattern/) | [Java](./Algorithms/0290-word-pattern/) | *N/A* | *N/A* | Easy ||
 |344| [Reverse String](https://leetcode.com/problems/reverse-string/) | [Java](./Algorithms/0344-Reverse-String/) | *O(n)* | *O(1)* | Easy ||
+|345| [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) | [Java](./Algorithms/0345-Reverse-Vowels-of-a-String) | *O(N/2)* | *O(1)* | Easy ||
 |383| [Ransom Note](https://leetcode.com/problems/ransom-note/) | [Java](./Algorithms/0383-Ransom-Note/) | *N/A* | *N/A* | Easy ||
 |387| [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | [Java](./Algorithms/0387-First-Unique-Character-in-a-String/) | *N/A* | *N/A* | Easy ||
 |389| [Find the Difference](https://leetcode.com/problems/find-the-difference/) | [Java](./Algorithms/0389-find-the-difference/) | *N/A* | *N/A* | Easy ||
+|392| [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | [Java](./Algorithms/0392-Is-Subsequence) | *N/A* | *N/A* | Easy ||
+|394| [Decode String](https://leetcode.com/problems/decode-string/) | [Java](./Algorithms/0394-Decode-String) | *N/A* | *N/A* | Medium ||
 |412| [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | [Java](./Algorithms/0412-Fizz-Buzz/) | *N/A* | *N/A* | Easy ||
+|443| [String Compression](https://leetcode.com/problems/maximum-average-subarray-i/) | [Java](./Algorithms/0443-String-Compression/) | *O(N^2)* | *O(1)* | Medium ||
 |557| [Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/) | [Java](./Algorithms/0557-Reverse-Words-in-a-String-III/) | *N/A* | *N/A* | Easy ||
 |567| [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [Java](./Algorithms/0567-Permutation-in-String/) | *N/A* | *N/A* | Medium ||
+|649| [Dota2 Senate](https://leetcode.com/problems/dota2-senate/) | [Java](./Algorithms/0649-Dota2-Senate/) | *N/A* | *N/A* | Medium ||
 |680| [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | [Java](./Algorithms/0680-Valid-Palindrome-II/) | *N/A* | *N/A* | Easy ||
 |784| [Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/description/) | [Java](./Algorithms/0784-Letter-Case-Permutation/) | *O(2^n)* | *O(2^n)* | Medium | [View](https://leetcode.com/problems/letter-case-permutation/solutions/3530308/java-easy-to-understand-o-2-n-dfs-recursion-using-backtracking/) discussion on leetcode |
+|1456| [Maximum Number of Vowels in a Substring of Given Length](https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/) | [Java](./Algorithms/1456-Maximum-Number-of-Vowels-in-a-Substring-of-Given-Length/) | *O(N)* | *O(1)* | Medium ||
+|1657| [Determine if Two Strings Are Close](https://leetcode.com/problems/determine-if-two-strings-are-close) | [Java](./Algorithms/1657-Determine-if-Two-Strings-Are-Closed) | *O(N)* | *O(1)* | Medium ||
+|1768| [Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/) | [Java](./Algorithms/1768-Merge-String-Alternately) | *O(N+M)* | *O(1)* | Easy ||
+|2390| [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/) | [Java](./Algorithms/2390-Removing-Stars-From-a-String) | *O(N)* | *O(NlogN)* | Medium ||
 
 ### Linked List
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -586,7 +683,10 @@ leetcode/
 |160| [Intersection of Two Linked Lists](https://leetcode.com/problems/Intersection-of-Two-Linked-Lists/) | [Java](./Algorithms/0160-Intersection-of-Two-Linked-Lists/) | *N/A* | *N/A* | Easy ||
 |206| [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [Java](./Algorithms/0206-reverse-linked-list/) | *O(n)* | *O(1)* | Easy ||
 |234| [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [Java](./Algorithms/0234-palindrome-linked-list/) | *N/A* | *N/A* | Easy ||
+|328| [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) | [Java](./Algorithms/0328-Odd-Even-Linked-List/) | *O(N)* | *O(N)* | Medium ||
 |876| [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | [Java](./Algorithms/0876-Middle-of-the-Linked-List/) | *N/A* | *N/A* | Easy ||
+|2095| [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/) | [Java](./Algorithms/2095-Delete-the-Middle-Node-of-a-Linked-List) | *O(N)* | *O(N)* | Medium ||
+|2130| [Leaf Similar Trees](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/) | [Java](./Algorithms/2130-Leaf-Similar-Trees/) | *O(N)* | *O(N)* | Medium ||
 
 ### Two Pointers
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -601,6 +701,7 @@ leetcode/
 |28| [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | [Java](./Algorithms/0028-Find-the-Index-of-the-First-Occurrence-in-a-String/) | *N/A* | *N/A* | Medium ||
 |125| [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | [Java](./Algorithms/0125-Valid-Palindrome/) | *N/A* | *N/A* | Easy ||
 |141| [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | [Java](./Algorithms/0141-Linked-List-Cycle/) | *N/A* | *N/A* | Easy ||
+|151| [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | [Java](./Algorithms/0151-Reverse-Words-in-a-String) | *O(N)* | *O(N)* | Medium ||
 |160| [Intersection of Two Linked Lists](https://leetcode.com/problems/Intersection-of-Two-Linked-Lists/) | [Java](./Algorithms/0160-Intersection-of-Two-Linked-Lists/) | *N/A* | *N/A* | Easy ||
 |167| [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java](./Algorithms/0167-Two-Sum-II-Input-Array-Is-Sorted/) | *O(n)* | *O(1)* | Medium | [View](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/solutions/3490974/java-well-detailed-two-pointers-runtime-beats-9880-1ms-memory-beats-8131-451mb/) discussion on leetcode |
 |189| [Rotate Array](https://leetcode.com/problems/rotate-array/) | [Java](./Algorithms/0189-Rotate-Array/) | *N/A* | *O(1)* | Medium | [View](https://leetcode.com/problems/rotate-array/solutions/3487654/java-explained-array-manipulation-runtime-beats-100-0ms-memory-beats-23-2-58-9mb/) discussion on leetcode |
@@ -609,7 +710,10 @@ leetcode/
 |234| [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | [Java](./Algorithms/0234-palindrome-linked-list/) | *N/A* | *N/A* | Easy ||
 |283| [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Java](./Algorithms/0283-Move-Zeroes/) | *O(n)* | *O(1)* | Easy | [View](https://leetcode.com/problems/move-zeroes/solutions/3490931/java-well-detailed-two-pointers-runtime-beats-99-98-1ms-memory-beats-56-79-43-9mb/) discussion on leetcode |
 |344| [Reverse String](https://leetcode.com/problems/reverse-string/) | [Java](./Algorithms/0344-Reverse-String/) | *O(n)* | *O(1)* | Easy ||
+|345| [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) | [Java](./Algorithms/0345-Reverse-Vowels-of-a-String) | *O(N/2)* | *O(1)* | Easy ||
 |350| [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) | [Java](./Algorithms/0350-Intersection-of-Two-Arrays-II/) | *N/A* | *N/A* | Easy ||
+|392| [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | [Java](./Algorithms/0392-Is-Subsequence) | *N/A* | *N/A* | Easy ||
+|443| [String Compression](https://leetcode.com/problems/maximum-average-subarray-i/) | [Java](./Algorithms/0443-String-Compression/) | *O(N^2)* | *O(1)* | Medium ||
 |455| [Assign Cookies](https://leetcode.com/problems/assign-cookies/) | [Java](./Algorithms/0728-assign-cookies/) | *N/A* | *N/A* | Easy ||
 |557| [Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/) | [Java](./Algorithms/0557-Reverse-Words-in-a-String-III/) | *N/A* | *N/A* | Easy ||
 |567| [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [Java](./Algorithms/0567-Permutation-in-String/) | *N/A* | *N/A* | Medium ||
@@ -620,7 +724,11 @@ leetcode/
 |977| [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | [Java](./Algorithms/0977-Squares-of-a-Sorted-Array/) | *O(n)* | *O(n)* | Easy | [View](https://leetcode.com/problems/squares-of-a-sorted-array/solutions/3487514/java-well-detailed-two-pointers-runtime-beats-100-1ms-memory-beats-5774-441mb/) discussion on leetcode |
 |1346| [Check If N and Its Double Exist](https://leetcode.com/problems/check-if-n-and-its-double-exist/) | [Java](./Algorithms/1346-Check-If-N-and-Its-Double-exist/) | *N/A* | *N/A* | Easy ||
 |1385| [Find the Distance Value Between Two Arrays](https://leetcode.com/problems/find-the-distance-value-between-two-arrays/) | [Java](./Algorithms/1385-Find-the-Distance-Value-Between-Two-Arrays/) | *N/A* | *N/A* | Easy ||
+|1679| [Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs) | [Java](./Algorithms/1679-Max-Number-of-K-Sum-Pairs) | *O(N)* | *O(1)* | Medium ||
+|1768| [Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/) | [Java](./Algorithms/1768-Merge-String-Alternately) | *O(N+M)* | *O(1)* | Easy ||
 |1855| [Maximum Distance Between a Pair of Values](https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/description/) | [Java](./Algorithms/1855-Maximum-Distance-Between-a-Pair-of-Values) | *N/A* | *N/A* | Medium ||
+|2095| [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/) | [Java](./Algorithms/2095-Delete-the-Middle-Node-of-a-Linked-List) | *O(N)* | *O(N)* | Medium ||
+|2130| [Leaf Similar Trees](https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/) | [Java](./Algorithms/2130-Leaf-Similar-Trees/) | *O(N)* | *O(N)* | Medium ||
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
