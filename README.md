@@ -36,11 +36,11 @@ This repository contains accepted solutions of many problems from leetcode inclu
 Each problem has its own separate README with related explanations and examples for further reading (including ones to leetcode problem).
 
 _Read source-code by Programming Languages:_
-[_Java_](https://github.com/ladunjexa/leetcode/search?l=java),
-[_C#_](https://github.com/ladunjexa/leetcode/search?l=c%23),
-[_Python_](https://github.com/ladunjexa/leetcode/search?l=python),
-[_JavaScript_](https://github.com/ladunjexa/leetcode/search?l=javascript),
-[_TypeScript_](https://github.com/ladunjexa/leetcode/search?l=typescript)
+[_Java_](https://github.com/search?q=repo%3Aladunjexa%2Fthe-leetcode++language%3AJava&type=code),
+[_C#_](https://github.com/search?q=repo%3Aladunjexa%2Fthe-leetcode++language%3ACSharp&type=code),
+[_Python_](https://github.com/search?q=repo%3Aladunjexa%2Fthe-leetcode++language%3APython&type=code),
+[_JavaScript_](https://github.com/search?q=repo%3Aladunjexa%2Fthe-leetcode++language%3AJavaScript&type=code),
+[_TypeScript_](https://github.com/search?q=repo%3Aladunjexa%2Fthe-leetcode++language%3ATypeScript&type=code)
 
 *☝ Note that this project is meant to be used for learning and researching purposes
 only, and it is **not** meant to be used for production.*
