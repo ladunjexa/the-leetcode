@@ -5,7 +5,7 @@
 ## JS
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
-|2618| [Check if Object Instance of Class](https://leetcode.com/problems/check-if-object-instance-of-class/) | [JavaScript](./Algorithms/2618-check-if-object-instance-of-class/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
+|2618| [Check if Object Instance of Class](https://leetcode.com/problems/check-if-object-instance-of-class/) | [JavaScript](./2618-check-if-object-instance-of-class/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |2619| [Array Prototype Last](https://leetcode.com/problems/array-prototype-last/) | [JavaScript](./2619-array-prototype-last/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |2620| [Counter](https://leetcode.com/problems/counter) | [JavaScript](./2620-Counter) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |2621| [Sleep](https://leetcode.com/problems/sleep/) | [JavaScript](./2621-sleep/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
