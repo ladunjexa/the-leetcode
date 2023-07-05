@@ -37,7 +37,7 @@
 * [Memoization](#memoization)
 * [Greedy](#greedy)
 * [Graph](#graph)
-* [Heap (Priority Queue)](#heap-(priority-queue))
+* [Heap (Priority Queue)](#heap-priority-queue)
 * [Quickselect](#quickselect)
 * [Shortest Path](#shortest-path)
 * [Geometry](#geometry)
