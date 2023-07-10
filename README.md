@@ -101,6 +101,7 @@ leetcode/
 * [Doubly Linked List](#doubly-linked-list)
 * [Stack](#stack)
 * [Monotonic Stack](#monotonic-stack)
+* [Monotonic Queue](#monotonic-queue)
 * [Queue](#queue)
 * [Tree](#tree)
 * [Hash Table](#hash-table)
@@ -212,6 +213,7 @@ leetcode/
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
 |225| [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/) | [Java](./Algorithms/0225-implement-stack-using-queues/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |232| [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | [Java](./Algorithms/0232-implement-queue-using-stacks/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
+|239| [Sliding Window Maximum](https://leetcode.com/problem/sliding-window-maximum/) | [Java](./Algorithms/0239-Sliding-Window-Maximum/) | *O(n)* | *O(k)* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |387| [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | [Java](./Algorithms/0387-First-Unique-Character-in-a-String/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |649| [Dota2 Senate](https://leetcode.com/problems/dota2-senate/) | [Java](./Algorithms/0649-Dota2-Senate/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |933| [Number of Recent Calls](https://leetcode.com/problems/number-of-recent-calls/) | [Java](./Algorithms/0933-Number-of-Recent-Calls) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
@@ -245,6 +247,11 @@ leetcode/
 |84| [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | [Java](./Algorithms/84-Largest-Rectangle-in-Histogram/) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |739| [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [Java](./Algorithms/0739-Daily-Temperatures/) | *O(N)* | *O(N)* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |901| [Online Stock Span](https://leetcode.com/problems/online-stock-span/) | [Java](./Algorithms/901-online-stock-span/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+
+### Monotonic Queue
+|  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
+|-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
+|239| [Sliding Window Maximum](https://leetcode.com/problem/sliding-window-maximum/) | [Java](./Algorithms/0239-Sliding-Window-Maximum/) | *O(n)* | *O(k)* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 
 ### Brainteaser
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
@@ -304,7 +311,9 @@ leetcode/
 |  #  | Title           |  Solution       |  Time           | Space           | Difficulty    | Note          |
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
 |3| [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | [Java](./Algorithms/0003-Longest-Substring-Without-Repeating-Characters/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+|76| [Minimum Window Substring](https://leetcode.com/problem/minimum-window-substring/) | [Java](./Algorithms/0105-Minimum-Window-Substring) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |219| [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | [Java](./Algorithms/0219-Contains-Duplicate-II/) | *O(N)* | *O(N)* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
+|239| [Sliding Window Maximum](https://leetcode.com/problem/sliding-window-maximum/) | [Java](./Algorithms/0239-Sliding-Window-Maximum/) | *O(n)* | *O(k)* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |438| [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | [Java](./Algorithms/438-Find-All-Anagrams-in-a-String/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |567| [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | [Java](./Algorithms/0567-Permutation-in-String/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |643| [Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/) | [Java](./Algorithms/0643-Maximum-Average-Subarray-I/) | *O(N)* | *O(1)* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
@@ -350,6 +359,7 @@ leetcode/
 |-----|---------------- | --------------- | --------------- | --------------- | ------------- |--------------|
 |23| [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [Java](./Algorithms/23-Merge-k-Sorted-Lists/) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |215| [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) | [Java](./Algorithms/215-kth-largest-element-in-an-array/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+|239| [Sliding Window Maximum](https://leetcode.com/problem/sliding-window-maximum/) | [Java](./Algorithms/0239-Sliding-Window-Maximum/) | *O(n)* | *O(k)* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |295| [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) | [Java](./Algorithms/295-Find-Median-from-Data-Stream/) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |347| [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | [Java](./Algorithms/347-Top-K-Frequent-Elements/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |1337| [The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | [Java](./Algorithms/1337-The-K-Weakest-Rows-in-a-Matrix/) | *O(nlogm)* | *O(n)* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) | [View](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/solutions/3540636/java-comprehensive-t-o-n-logm-s-o-n-runtime-99-58-1ms-memory-11-88-44-5mb/) discussion on leetcode |
@@ -633,6 +643,7 @@ leetcode/
 |41| [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | [Java](./Algorithms/41-first-missing-positive/) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |49| [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | [Java](./Algorithms/49-Group-Anagrams/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |73| [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | [Java](./Algorithms/73-Set-Matrix-Zeroes/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+|76| [Minimum Window Substring](https://leetcode.com/problem/minimum-window-substring/) | [Java](./Algorithms/0105-Minimum-Window-Substring) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |105| [Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | [Java](./Algorithms/105-construct-binary-tree-from-preorder-and-inorder-traversal/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |128| [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | [Java](./Algorithms/128-Longest-Consecutive-Sequence/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |138| [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/) | [Java](./Algorithms/138-Copy-List-with-Random-Pointer/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
@@ -809,6 +820,7 @@ leetcode/
 |219| [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/) | [Java](./Algorithms/0219-Contains-Duplicate-II/) | *O(N)* | *O(N)* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |228| [Summary Ranges](https://leetcode.com/problems/summary-ranges/) | [Java](./Algorithms/0228-summary-ranges/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |238| [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [Java](./Algorithms/0238-Product-of-Array-Except-Self) | *O(N)* | *O(N)* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+|239| [Sliding Window Maximum](https://leetcode.com/problem/sliding-window-maximum/) | [Java](./Algorithms/0239-Sliding-Window-Maximum/) | *O(n)* | *O(k)* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |240| [Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/) | [Java](./Algorithms/240-Search-a-2D-Matrix-II/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |268| [Missing Number](https://leetcode.com/problems/missing-number/) | [Java](./Algorithms/268-missing-number/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |283| [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [Java](./Algorithms/0283-Move-Zeroes/) | *O(n)* | *O(1)* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) | [View](https://leetcode.com/problems/move-zeroes/solutions/3490931/java-well-detailed-two-pointers-runtime-beats-99-98-1ms-memory-beats-56-79-43-9mb/) discussion on leetcode |
@@ -886,6 +898,7 @@ leetcode/
 |58| [Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | [Java](./Algorithms/0058-Length-of-Last-Word/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |67| [Add Binary](https://leetcode.com/problems/add-binary/) | [Java](./Algorithms/0067-Add-Binary/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |72| [Edit Distance](https://leetcode.com/problems/edit-distance/) | [Java](./Algorithms/72-edit-distance/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
+|76| [Minimum Window Substring](https://leetcode.com/problem/minimum-window-substring/) | [Java](./Algorithms/0105-Minimum-Window-Substring) | *N/A* | *N/A* | ![Hard](https://img.shields.io/badge/Hard-ca3351?style=flat-square) ||
 |125| [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | [Java](./Algorithms/0125-Valid-Palindrome/) | *N/A* | *N/A* | ![Easy](https://img.shields.io/badge/Easy-15aca3?style=flat-square) ||
 |131| [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/) | [Java](./Algorithms/131-palindrome-partitioning/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
 |139| [Word Break](https://leetcode.com/problems/word-break/) | [Java](./Algorithms/139-Word-Break/) | *N/A* | *N/A* | ![Medium](https://img.shields.io/badge/Medium-ff9a00?style=flat-square) ||
