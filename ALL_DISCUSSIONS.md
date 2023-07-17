@@ -28,18 +28,24 @@ only, and it is **not** meant to be used for production.*
 ### Table of Discussions
 * [35. Search Insert Position](#search-insert-position)
 * [36. Valid Sudoku](#valid-sudoku)
+* [62. Unique Paths](#unique-paths)
+* [63. Unique Paths](#unique-paths-ii)
 * [74. Search a 2D Matrix](#search-a-2d-matrix)
+* [97. Interleaving String](#interleaving-string)
 * [118. Pascal's Triangle](#pascals-triangle)
 * [119. Pascal's Triangle II](#pascals-triangle-ii)
 * [167. Two Sum II - Input Array Is Sorted](#two-sum-ii)
 * [171. Excel Sheet Column Number](#excel-sheet-column-number)
 * [189. Rotate Array](#rotate-array)
 * [202. Happy Number](#happy-number)
+* [222. Count Complete Tree Nodes](#count-complete-tree-nodes)
 * [235. Lowest Common Ancestor of a Binary Search Tree](#lowest-common-ancestor-of-a-binary-search-tree)
 * [278. First Bad Version](#first-bad-version)
 * [283. Move Zeroes](#move-zeroes)
+* [289. Game of Life](#game-of-life)
 * [326. Power of Three](#power-of-three)
 * [344. Reverse String](#reverse-string)
+* [380. Insert Delete GetRandom O(1)](#insert-delete-getrandom)
 * [542. 01 Matrix](#01-matrix)
 * [784. Letter Case Permutation](#letter-case-permutation)
 * [977. Squares of a Sorted Array](#squares-of-a-sorted-array)
@@ -197,6 +203,234 @@ class Solution {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# Unique Paths
+## Intuition
+The solution utilizes ***dynamic programming*** to solve the problem efficiently. It uses a recursive approach with memoization to avoid redundant calculations. The function `uniquePaths` takes the dimensions of the grid, the current position `(i, j)`, and a memoization table `dp` as parameters.
+
+## Approach
+1. Create a 2D array `dp`of size `m x n` to store the number of unique paths for each cell.
+2. Initialize all cells in `dp` with a sentinel value, such as `Integer.MIN_VALUE`, to indicate that the value has not been calculated yet.
+3. Call the helper function `uniquePaths` with the initial position `(0, 0)` and the memoization table `dp`.
+4. Inside the `uniquePaths` function:
+    1. Check if the current position is the bottom-right corner (i.e., `i == m - 1 and j == n - 1`). If so, return `1` because there is only one path to reach the destination.
+    2. Check if the current position is outside the grid boundaries (i.e., `i >= m or j >= n`). If so, return `0` because it is an invalid path.
+    3. Check if the value for the current position exists in `dp`. If so, return the precalculated value.
+    4. Recursively calculate the number of unique paths by moving down `(i + 1, j)` and right `(i, j + 1)`.
+    5. Store the result in `dp[i][j]` and return the same value.
+5. Finally, return the result of `uniquePaths` function with the initial position `(0, 0)`.
+
+## Complexity
+- Time complexity: $$O(m * n)$$
+
+The time complexity of the `uniquePaths` function can be determined by considering the number of unique subproblems it solves. The function explores all possible paths from each cell in the grid. Since the function is implemented recursively, it calculates the number of unique paths for each cell by recursively calling itself for the adjacent cells.
+
+Let's assume the grid has dimensions `m x n`.
+
+*In the worst case*, the function needs to calculate the number of unique paths for each cell in the grid. For each cell, it makes two recursive calls to its adjacent cells (down and right). Therefore, the total number of recursive calls made by the function can be approximated as `O(2^(m+n))`. This exponential time complexity arises from the recursive branching factor.
+
+However, the function uses a memoization technique to store the results of previously solved subproblems in the dp array. Before making a recursive call for a cell, it checks if the result is already present in the dp array. If so, it retrieves the result from the array instead of recalculating it. This optimization significantly reduces the number of redundant recursive calls, resulting in a lower effective time complexity.
+
+Considering the memoization, the time complexity of the `uniquePaths` function can be approximated as `O(m * n)`, where `m` and `n` are the dimensions of the grid.
+
+- Space complexity: $$O(m * n)$$
+
+The space complexity of the `uniquePaths` function is determined by the memory consumed by the `dp` array and the recursive call stack.
+
+The dp array has dimensions `m x n`, which corresponds to the size of the grid. Therefore, it requires `O(m * n)` space.
+
+The depth of the recursion is limited by the dimensions of the grid (`m` and `n`). *In the worst case*, the recursion depth can be `m + n - 2` (when starting from the top-left corner). This is because each recursive call moves either down or right, and the goal is to reach the bottom-right corner. Therefore, the space occupied by the recursive call stack can be approximated as `O(m + n)`.
+
+In conclusion, the space complexity of the uniquePaths function is `O(m * n)` due to the dp array, and the time complexity is approximately `O(m * n)` when considering the memoization optimization.
+
+## Code
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+        
+        for(int i = 0; i < m; i++)
+            Arrays.fill(dp[i], Integer.MIN_VALUE);
+
+        return uniquePaths(m, n, 0, 0, dp);
+    }
+
+    private int uniquePaths(int M, int N, int i, int j, int[][] dp) {
+        if(i == M - 1 && j == N - 1)
+            return 1;
+        
+        if(i >= M || j >= N)
+            return 0;
+        
+        if(dp[i][j] != Integer.MIN_VALUE)
+            return dp[i][j];
+        
+        int down = uniquePaths(M, N, i + 1, j, dp);
+        int right = uniquePaths(M, N, i, j + 1, dp);
+        
+        return dp[i][j] = (down + right);
+    }
+}
+```
+
+## DOC Code
+```java
+class Solution {
+    public int uniquePaths(int m, int n) {
+        // Create a 2D array to store the number of unique paths for each position
+        int[][] dp = new int[m][n];
+        
+        // Initialize all elements in dp with a sentinel value to indicate that they haven't been calculated yet
+        for(int i = 0; i < m; i++)
+            Arrays.fill(dp[i], Integer.MIN_VALUE);
+
+        // Call the recursive helper function to calculate the number of unique paths starting from the top-left position (0, 0)
+        return uniquePaths(m, n, 0, 0, dp);
+    }
+
+    private int uniquePaths(int M, int N, int i, int j, int[][] dp) {
+        // If we have reached the bottom-right position (M-1, N-1), we have found a unique path
+        if(i == M - 1 && j == N - 1)
+            return 1;
+        
+        // If we have gone out of bounds, we cannot continue and there are no paths from this position
+        if(i >= M || j >= N)
+            return 0;
+        
+        // If the number of unique paths for this position has already been calculated, return it
+        if(dp[i][j] != Integer.MIN_VALUE)
+            return dp[i][j];
+        
+        // Calculate the number of unique paths by recursively moving down and right from the current position
+        int down = uniquePaths(M, N, i + 1, j, dp);
+        int right = uniquePaths(M, N, i, j + 1, dp);
+        
+        // Store the calculated result in dp to avoid redundant calculations
+        return dp[i][j] = (down + right);
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Unique Paths II
+## Intuition & Approach
+The `uniquePathsWithObstacles` function uses a **recursive approach with memoization** to solve the problem of finding the number of unique paths in an obstacle grid. The memoization technique is used *to avoid redundant computations and improve the efficiency of the function*.
+
+The main function `uniquePathsWithObstacles` takes the obstacle grid as input and initializes a memoization array `memo` of the same size as the grid. The function then calls the helper function (*method overloading*) `uniquePathsWithObstacles` with the initial parameters `(0, 0)` representing the *starting position of the robot*.
+
+The helper function `uniquePathsWithObstacles` recursively calculates the number of unique paths from the current position `(i, j)` to the bottom-right corner. It checks three base cases:
+
+1. If the current position is out of bounds or contains an obstacle, the path is invalid, so it *returns `0`*.
+
+2. If the current position is at the bottom-right corner, it means a valid path has been found, so it *returns `1`*.
+
+3. If the result for the current position has already been calculated and stored in the memoization array, it directly *returns the stored result*.
+
+If none of the base cases are met, the function calculates the number of unique paths by recursively moving to the right `(i, j + 1)` and down `(i + 1, j)` from the current position and summing up the results. It stores the result in the memoization array for future use and *returns the result*.
+
+The `isOutOfBounds` function is a helper function that checks if a given position `(i, j)` is *outside the bounds of the grid*.
+
+Overall, the solution efficiently solves the problem of finding the number of unique paths in an obstacle grid by using memoization to avoid redundant computations.
+
+## Complexity
+- Time complexity: $$O(M x N)$$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity: $$O(M x N)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+The time complexity of `uniquePathsWithObstacles` function depends on the size of the grid, given by `M x N`. Since each position in the grid is computed once and stored in the memoization array, the time complexity can be considered as `O(M x N)`.
+
+The space complexity of the solution is also `O(M x N)` because of the memoization array, which has the same size as the grid. Additionally, the recursion stack will occupy space proportional to the maximum depth of the recursion, which is equal to the sum of `M` and `N` in the worst case. However, since the solution states that the answer will be less than or equal to `2 * 10^9`, the recursion depth will not exceed a large value.
+
+## Code
+``` Java []
+class Solution {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        int M = obstacleGrid.length, N = obstacleGrid[0].length;
+        int[][] memo = new int[M][N];
+
+        for(int[] v : memo)
+            Arrays.fill(v, Integer.MIN_VALUE);
+
+        return uniquePathsWithObstacles(obstacleGrid, 0, 0, memo);
+    }
+
+    private int uniquePathsWithObstacles(int[][] obstacleGrid, int i, int j, int[][] memo) {
+        if(isOutOfBounds(obstacleGrid, i, j) || obstacleGrid[i][j] == 1)
+            return 0;
+        
+        if(i == obstacleGrid.length - 1 && j == obstacleGrid[0].length - 1)
+            return 1;
+        
+        if(memo[i][j] != Integer.MIN_VALUE)
+            return memo[i][j];
+        
+        return memo[i][j] = uniquePathsWithObstacles(obstacleGrid, i + 1, j, memo) + uniquePathsWithObstacles(obstacleGrid, i, j + 1, memo);
+    }
+
+    private boolean isOutOfBounds(int[][] mat, int i, int j) {
+        return i < 0 || i >= mat.length || j < 0 || j >= mat[0].length;
+    }
+}
+```
+``` Java []
+class Solution {
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        // Get the dimensions of the grid
+        int M = obstacleGrid.length; // Number of rows
+        int N = obstacleGrid[0].length; // Number of columns
+
+        // Create a memoization array to store computed results
+        int[][] memo = new int[M][N];
+
+        // Initialize the memoization array with a sentinel value
+        // indicating that the value has not been computed yet
+        for (int[] v : memo) {
+            Arrays.fill(v, Integer.MIN_VALUE);
+        }
+
+        // Call the recursive function to find the unique paths
+        return uniquePathsWithObstacles(obstacleGrid, 0, 0, memo);
+    }
+
+    // Recursive function to find the number of unique paths from (i, j) to the bottom-right corner
+    private int uniquePathsWithObstacles(int[][] obstacleGrid, int i, int j, int[][] memo) {
+        // If the current position is out of bounds or an obstacle, return 0
+        if (isOutOfBounds(obstacleGrid, i, j) || obstacleGrid[i][j] == 1) {
+            return 0;
+        }
+
+        // If the current position is at the bottom-right corner, return 1
+        if (i == obstacleGrid.length - 1 && j == obstacleGrid[0].length - 1) {
+            return 1;
+        }
+
+        // If the result for the current position has already been computed, return it
+        if (memo[i][j] != Integer.MIN_VALUE) {
+            return memo[i][j];
+        }
+
+        // Calculate the number of unique paths by recursively moving right and down from the current position
+        int paths = uniquePathsWithObstacles(obstacleGrid, i + 1, j, memo) +
+                    uniquePathsWithObstacles(obstacleGrid, i, j + 1, memo);
+
+        // Store the computed result in the memoization array
+        memo[i][j] = paths;
+
+        // Return the number of unique paths from the current position
+        return paths;
+    }
+
+    // Helper function to check if a given position is out of bounds
+    private boolean isOutOfBounds(int[][] grid, int i, int j) {
+        return i < 0 || i >= grid.length || j < 0 || j >= grid[0].length;
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Search a 2D Matrix
 ## Intuition & Approach
 The `searchMatrix` function takes a `m x n` integer matrix `matrix` that is sorted row-rise and a integer value `target` as input and returns `true` if `target` is in `matrix` or `false` otherwise.
@@ -254,6 +488,70 @@ class Solution {
         }
 
         return false;
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Interleaving String
+## Intuition & Approach
+> `isInterleave` method aims to determine whether a string `s3` can be formed by interleaving characters from strings `s1` and `s2` while preserving the relative order of characters from both strings.
+
+The `isInterleave` function is the main entry point, which initializes the lengths of `s1`, `s2`, and `s3` as `M`, `N`, and `K`, respectively. If the sum of the lengths of `s1` and `s2` is not equal to the length of `s3`, it immediately returns `false`.
+
+Otherwise, it calls the private isInterleave helper function with additional parameters: `s1`, `s2`, `s3`, current indices `i` and `j`, and a memoization array `memo`.
+
+The isInterleave helper function checks whether characters from `s1` and `s2` can be interleaved to form `s3` starting from indices `i` and `j`, respectively. It uses memoization to avoid redundant computations.
+
+The function first checks if the sum of indices `i` and `j` is equal to the length of `s3`. If it is, that means all the characters of `s3` have been formed successfully, so it returns `true`.
+
+Next, it checks if the memoization array already contains a value for the current indices `i` and `j`. If it does, it directly returns the memoized value.
+
+If the above conditions are not met, the function retrieves the character ch from `s3` at the current indices `i` and `j`. It then recursively checks two possibilities:
+
+1. If i is within the bounds of `s1`, the character at index i in `s1` matches ch, and the remaining characters in `s1` can be interleaved to form the remaining characters of `s3`. This is checked by calling isInterleave with incremented `i` and the same `j`. If this condition is satisfied, the function sets the corresponding flag to `true`.
+
+2. If `j` is within the bounds of `s2`, the character at index `j` in `s2` matches `ch`, and the remaining characters in `s2` can be interleaved to form the remaining characters of `s3`. This is checked by calling isInterleave with the same `i` and incremented `j`. If this condition is satisfied, the function sets the corresponding flag to `true`.
+
+Finally, the function assigns the *logical OR* of both `flags` to the current memoization entry `memo[i][j]` and returns it.
+
+## Complexity
+- Time complexity: $$O(M * N)$$
+
+The **time complexity** of this solution is `O(M * N)`, where `M` is the length of string `s1` and `N` is the length of string `s2`. This is because each combination of `i` and `j` is visited once, and there are `M * N` possible combinations.
+
+- Space complexity: $$O(M * N)$$
+
+The **space complexity** is `O(M * N)` as well. This is due to the memoization array `memo`, which has dimensions `(M + 1) x (N + 1)` to account for the possible values of `i` and `j`.
+
+## Code
+```java
+class Solution {
+    public boolean isInterleave(String s1, String s2, String s3) {
+        int M = s1.length(), N = s2.length(), K = s3.length();
+
+        if(N + M != K)
+            return false;
+        
+        return isInterleave(s1, s2, s3, 0, 0, new Boolean[M + 1][N + 1]);
+    }
+
+    private boolean isInterleave(String s1, String s2, String s3, int i, int j, Boolean[][] memo) {
+        if(i + j == s3.length())
+            return true;
+        
+        if(memo[i][j] != null)
+            return memo[i][j];
+
+        char ch = s3.charAt(i + j);
+        
+        boolean[] flags = {
+            i < s1.length() && s1.charAt(i) == ch && isInterleave(s1, s2, s3, i + 1, j, memo), 
+            j < s2.length() && s2.charAt(j) == ch && isInterleave(s1, s2, s3, i, j + 1, memo)
+        };
+        
+        return memo[i][j] = (flags[0] || flags[1]);
     }
 }
 ```
@@ -797,6 +1095,76 @@ public class Solution extends VersionControl {
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# Count Complete Tree Nodes
+## Intuition & Approach
+`countNodes` method checks whether the current node is null or not. If it is null, it returns `0` because there are no nodes to count. Otherwise, it recursively counts the nodes in the left subtree and right subtree and adds 1 to account for the current node.
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+##### Main Concepts
+**Recursion:** The code uses a recursive approach to count the nodes in the binary tree. It breaks down the problem into smaller subproblems by recursively calling the countNodes function on the left and right subtrees.
+
+**Binary Tree Traversal:** The code traverses the binary tree in a depth-first manner, visiting each node once.
+
+## Complexity
+- Time complexity: $$O(n)$$
+
+The *time complexity* of this algorithm is `O(n)`, where `n` is the number of nodes in the binary tree. This is because the code **visits each node exactly once**, performing a constant amount of work at each node.
+
+- Space complexity: $$O(n)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+The *space complexity* is determined by the recursive calls. In the worst case, when the tree is skewed and has a height of `n`, the space complexity becomes `O(n)` due to the recursion stack. This is because the recursive calls will be made for each node in the longest path from the root to a leaf. In the best case, when the tree is perfectly balanced, the space complexity is `O(log n)`, where `n` is the number of nodes.
+
+## Code
+``` Java []
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int countNodes(TreeNode root) {
+        return (root == null) ? 0 : 1 + countNodes(root.left) + countNodes(root.right);
+    }
+}
+```
+``` java []
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int countNodes(TreeNode root) {
+        if(root = null)
+            return 0;
+        else
+            return 1 + countNodes(root.left) + countNodes(root.right);
+    }
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 # Lowest Common Ancestor of a Binary Search Tree
 ## Intuition & Approach
 This code is an implementation of the ***Lowest Common Ancestor of a Binary Search Tree*** problem. It find the lowest common ancestor of two nodes, `p`, and `q`, in a binary search tree (BST). The lowest common ancestor is *the deepest node in the tree that is an ancestor of both `p` and  `q`*.
@@ -912,6 +1280,119 @@ class Solution {
     }
 }
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Game of Life
+## Intuition & Approach
+###### $$Runtime:$$ *100% (0 ms)*, $$Memory:$$ *94.98% (40.6 MB)*, $$T/C:$$ *O(M * N)*
+
+The given code implements the ***Game of Life*** algorithm. 
+> *The Game of Life is a cellular automaton devised by the mathematician John Conway. It consists of a grid of cells, where each cell can be either alive (represented by 1) or dead (represented by 0). The state of each cell in the grid evolves over time based on a set of rules*.
+
+**The algorithm works as follows:**
+
+1. The `gameOfLife` method takes a 2D array representing the initial state of the game and modifies it to the next state.
+
+2. It initializes variables `M` and `N` to store the dimensions of the `board`, and `x` to keep track of the row index in the source array.
+
+3. It creates a new 2D array called `source` and copies the initial state of the game into it using the clone method. This serves as a source of truth for the current state of the game while updating the `board`.
+
+4. It iterates over each cell in the `board` using a single loop and applies the `applyRules` method on each cell.
+
+5. The `applyRules` method takes the `grid = board`, `source`, and the current indices `i` and `j` as parameters.
+
+6. It counts the number of live neighbors around the current cell by calling the `countLiveNeighbors` method.
+
+7. If the current cell is alive `(grid[i][j] == 1)` and has exactly 2 or 3 live neighbors, it *remains alive in the next state*. Otherwise, it *dies* `(grid[i][j] = 0)`.
+
+8. If the current cell is dead `(grid[i][j] == 0)` and has exactly 3 live neighbors, it *becomes alive in the next state*. Otherwise, it *remains dead*.
+
+9. The `countLiveNeighbors` method recursively counts the number of live neighbors around the given cell.
+
+10. It checks the boundary conditions and returns `0` if the cell is outside the grid.
+
+11. If `skip` is `true`, it counts the number of live neighbors by recursively calling `countLiveNeighbors` on each adjacent cell using the `dx` and `dy` arrays. The `skip` parameter is used to *avoid counting the center cell as a neighbor of itself*.
+
+12. The final `count` of live neighbors is returned.
+
+## Complexity
+- Time complexity: $$O(M * N)$$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity: $$O(M * N)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+Let `M` be the number of rows and `N` be the number of columns in the grid.
+The `gameOfLife` method iterates over all `M * N` cells, resulting in a time complexity of `O(M * N)`.
+The `applyRules` method and `countLiveNeighbors` method both have a constant time complexity since they perform a fixed number of opreations.
+The space complexity of the algorithm is `O(M * N)` because it craetes a new 2D array (`source`) of the same size as the input grid.
+
+## Code
+``` java []
+class Solution {
+    private final int[] dx = {-1, 1, 0, 0, -1, -1, 1, 1};
+    private final int[] dy = {0, 0, -1, 1, -1, 1, -1, 1};
+
+    public void gameOfLife(int[][] board) {
+        int M = board.length, N = board[0].length, x = 0;
+        int[][] source = new int[M][N];
+
+        for (int[] v : board)
+            source[x++] = v.clone();
+        
+        for(int i = 0; i < M * N; applyRules(board, source, i / N, i++ % N));
+    }
+
+    private void applyRules(int[][] grid, int[][] source, int i, int j) {
+        int neighbors = countLiveNeighbors(source, i, j, true);
+
+        if(neighbors == 3)
+            grid[i][j] = 1;
+        else if(neighbors != 2)
+            grid[i][j] = 0;
+    }
+
+    private int countLiveNeighbors(int[][] grid, int i, int j, boolean skip) {
+        if(i < 0 || i >= grid.length || j < 0 || j >= grid[0].length)
+            return 0;
+        
+        if(!skip)
+            return grid[i][j] == 1 ? 1 : 0;
+        
+        int count = 0;
+        for (int k = 0; k < dx.length; count += countLiveNeighbors(grid, i + dx[k], j + dy[k++], false));
+        
+        return count;
+    }
+}
+```
+``` java []
+    // potentially more efficient
+    private int countLiveNeighbors(int[][] grid, int i, int j) {
+        int count = 0;
+
+        for(int k = 0; k < dx.length; k++) {
+            int r = i + dx[k];
+            int c = j + dy[k];
+            if(r < 0 || r >= grid.length || c < 0 || c >= grid[0].length)
+                continue;
+            
+            count += grid[r][c];
+        }
+
+        return count;
+    }
+}
+````
+
+**The code is designed to be beginner-friendly, and it can be further optimized for efficiency by considering the following optimizations:**
+
+- Use an in-place update strategy: Rather than updating the cells directly in the grid array while iterating over them, you can use a marking strategy. Mark the cells that need to be updated with a specific value to represent a transitioning from dead to alive and vice versa. After marking all the cells, perform a second pass to apply the updates based on the marked values. This reduces the possibility of overwriting values prematurely during the iteration. this strategy requires a bit of additional logic that expresses the previous value of the cell. This strategy eliminates the need for extra memory allocation and the overhead of copying the entire data, and simply avoid creating a separate `source` array for cloning the original state.
+
+- Optimize neighbor counting: The current implementation uses recursion to count live neighbors, which can be computationally expensive. You can optmize this process by counting live neighbors iteratively. Instead of recursively traversing all eight neighboring cells, you can directly check the eight adjacent cells and count the live ones. This avoids unnecessary function calls and improves performance
+
+- You can going the extra mile and specify the amount of iterations that are performed in the `countLiveNeighbors` method according to the coordinates. for example, in any `M * N` matrix - first we find the maximal `K` (represent the maximum possible number of neighboors, easily can result by manipulating the middlemost cell considering the parity of the number of rows and columns, for example if `N` and `M` are odd so the middlemost is `(M / 2, N / 2)`), and then we will make an adjustment according to the cell coordinates. (for ex., for each cell in a frame, there will be at most `(K / 2) + 1` neighbors). In general, the maximum value for `K` for any matrix is 8, and the minimum value is 3 so there is no effect in terms of complexity analysis (we typically ignore constant factors because they do not affect the overall growth rate of the algorithm as the input size increases, `T(N*M*K)=O(N*M) where K is constant`).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -1071,6 +1552,109 @@ private void swap(char[] c, int i, int j) {
     c[i] = c[j];
     // Assign the value of the temporary variable to the element at index 'j'
     c[j] = temp;
+}
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Insert Delete GetRandom
+## Intuition & Approach
+The given code implements a data structure called **RandomizedSet**, which maintains a set of unique integers. It supports three main operations: inserting an element, removing an element, and getting a random element from the set.
+
+The class utilizes two primary data structures: a *HashSet* named `randomizedSet` and an *ArrayList* named `elementsList`. The `randomizedSet` stores the unique integers, while the `elementsList` maintains the order of insertion and enables efficient random access.
+
+To insert an element into the set, the `insert` method is called with the value to be inserted. This method checks if the element already exists in the set by calling the private `exist` method. If the element doesn't exist, it adds the element to both the `randomizedSet` and `elementsList` using their respective add methods. Additionally, the `counter` variable is incremented to keep track of the number of elements in the set. *The method returns `true` if the element was successfully inserted*.
+
+The `remove` method is responsible for removing an element from the set. It first checks if the element exists in the set using the `exist` method. If the element is found, it removes the element from both the `randomizedSet` and `elementsList` using their respective remove methods. The `counter` variable is decremented to reflect the updated number of elements. *The method returns `true` if the element was successfully removed*.
+
+The `getRandom` method returns a random element from the set. It achieves this by generating a random index within the range of the current number of elements (`counter`). The `elementsList` is then accessed using this random index, and *the corresponding element is returned*.
+
+The `exist` method simply checks if an element exists in the `randomizedSet` by calling its `contains` method.
+
+## Complexity
+- Time complexity: $$O(1)$$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity: $$O(n)$$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+this implementation provides constant time complexity for insertion, removal, and getting a random element (`O(1)`). The *HashSet* and *ArrayList* operations used in the implementation have efficient lookup and modification time complexities, enabling the `RandomizedSet` to maintain its functionality effectively.
+
+The space complexity of the given `RandomizedSet` implementation is `O(n)`, where `n` is the number of elements stored in the set.
+The space usage is primarily attributed to two data structures: the *HashSet* (`randomizedSet`) and the *ArrayList* (*elementsList*).
+The *HashSet* `randomizedSet` stores the unique elements inserted into the set. In the worst case, if all elements are unique, the *HashSet* would require `O(n)` space to store them.
+The *ArrayList* *elementsList* maintains the order of insertion and allows for efficient random access. It stores the elements in the same order as they are inserted. Hence, it also requires `O(n)` space to store all the elements.
+Additionally, there are a few integer variables (*counter*) used to keep track of the number of elements, which require constant space.
+Therefore, considering the space requirements of the *HashSet*, *ArrayList*, and integer variables, the overall space complexity is `O(n)`.
+
+## Code
+```Java []
+
+class RandomizedSet {
+    private Set<Integer> randomizedSet;
+    private List<Integer> elementsList;
+    private int counter;
+
+    public RandomizedSet() {
+        this.randomizedSet = new HashSet<Integer>();
+        this.elementsList = new ArrayList<Integer>();
+        this.counter = 0;
+    }
+    
+    public boolean insert(int val) {
+        return !exist(val) && randomizedSet.add(val) && elementsList.add(val) && (counter++) >= 0;
+    }
+
+    public boolean remove(int val) {
+        return exist(val) && randomizedSet.remove(val) && elementsList.remove(Integer.valueOf(val)) && (counter--) >= 0;
+    }
+    
+    public int getRandom() {
+        return elementsList.get((int) Math.floor(Math.random() * (counter)));
+    }
+
+    private boolean exist(int val) {
+        return randomizedSet.contains(val);
+    }
+}
+
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * RandomizedSet obj = new RandomizedSet();
+ * boolean param_1 = obj.insert(val);
+ * boolean param_2 = obj.remove(val);
+ * int param_3 = obj.getRandom();
+ */
+```
+```Java []
+class RandomizedSet {
+    private Set<Integer> randomizedSet; // Set to store unique integers
+    private List<Integer> elementsList; // List to maintain insertion order
+    private int counter; // Counter to keep track of number of elements
+
+    public RandomizedSet() {
+        this.randomizedSet = new HashSet<Integer>(); // Initialize the set
+        this.elementsList = new ArrayList<Integer>(); // Initialize the list
+        this.counter = 0; // Initialize counter to 0
+    }
+    
+    public boolean insert(int val) {
+        return !exist(val) && randomizedSet.add(val) && elementsList.add(val) && (counter++) >= 0;
+        // Insert an element if it doesn't exist, update set, list, and counter
+    }
+
+    public boolean remove(int val) {
+        return exist(val) && randomizedSet.remove(val) && elementsList.remove(Integer.valueOf(val)) && (counter--) >= 0;
+        // Remove an element if it exists, update set, list, and counter
+    }
+    
+    public int getRandom() {
+        return elementsList.get((int) Math.floor(Math.random() * (counter)));
+        // Get a random element from the list
+    }
+
+    private boolean exist(int val) {
+        return randomizedSet.contains(val); // Check if an element exists in the set
+    }
 }
 ```
 
